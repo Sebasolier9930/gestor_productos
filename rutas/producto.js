@@ -6,6 +6,8 @@ const eschema = mongoose.Schema
 
 const multer = require('multer')
 const sharp = require('sharp')
+const path = require('path')
+const fs = require('fs')
 
 const eschemaproducto = new eschema({
     codigo: String,
@@ -22,26 +24,23 @@ module.exports = router
 
 // --------------------------------------- Vaina pa subir fotos
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        if (file) {
-            cb(null, './cliente/public/uploads')
-        }
-    },
+
+    destination: path.join(__dirname, '../uploads/'),
     filename: (req, file, cb) => {
         if (file) {
             const ext = file.originalname.split('.').pop()
-            cb(null, `${Date.now()}.${ext}`)
+            cb(null,`${ Date.now() }.${ ext }` )
         }
     }
 })
 
 const upload = multer({ storage })
 
-const helperImg = (filePath, filename, size = 900) => {
-    return WaveShaperNode(filePath)
+/*const helperImg = (filePath, filename, size = 900) => {
+    return sharp(filePath)
         .resize(size)
-        .toFile(`./cliente/public/uploads/${filename}`)
-}
+        .toFile(./cliente/public / uploads / ${ filename })
+}*/
 
 // ---------------------------------------
 

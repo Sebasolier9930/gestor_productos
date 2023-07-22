@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductoIndividual from '../components/ProductoIndividual'
 import axios from 'axios'
+import Header from '../components/Header'
 function ListaProductos(){
 
     const[dataProductos, setDataProductos] = useState([])
@@ -15,7 +16,7 @@ function ListaProductos(){
 
     }, [])
 
-    let listaproductos = dataProductos.map(producto => {
+    let listaproductos = dataProductos.sort((a, b) => a.codigo - b.codigo).map(producto => {
         return(
             <ProductoIndividual key={producto._id} producto={producto}></ProductoIndividual>
         )
@@ -25,14 +26,17 @@ function ListaProductos(){
 
 
     return(
-        <div className='container'>
-            <h3 className='mt-3 mb-4'>Lista de productos</h3>
+        <>
+            <Header></Header>
+        <div className='container cont-fondo'>
+            <h3 className='pt-3 pb-4 mx-2'>Lista de productos</h3>
             
             <div className='cards'>
-                {listaproductos}
+                {listaproductos.length !== 0 ? listaproductos : <p className='mt-3 mb-5'>No hay productos registrados</p>}
             </div>
 
         </div>
+        </>
     )
 }
 
