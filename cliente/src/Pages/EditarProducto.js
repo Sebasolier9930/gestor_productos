@@ -88,7 +88,7 @@ function EditarProducto() {
                             <label className="form-label">Imagen</label>
                             <input type="file" className="form-control" onChange={(e) => { setFileN(e.target.files[0]) }} />
                         </div>
-                        <img src={imagen ? "https://storsjo.onrender.com" + imagen : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
+                        <img src={imagen ? "https://storsjo.onrender.com/" + imagen : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>

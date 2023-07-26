@@ -19,7 +19,7 @@ app.use('/api/producto', rutaproducto)
 
 
 app.get('/', (req, res) => {
-    res.end('Bienvenidos al server perrooo')
+    res.end('Servidor corriendo')
 })
 
 // configurar server basico

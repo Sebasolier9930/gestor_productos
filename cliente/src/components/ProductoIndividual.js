@@ -32,7 +32,7 @@ function ProductoIndividual({ producto }) {
 
                 <p>{producto.codigo}</p>
 
-                <img src={producto.file ? "https://storsjo.onrender.com" + producto.file : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
+                <img src={producto.file ? "https://storsjo.onrender.com/" + producto.file : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
 
             </div>
 
