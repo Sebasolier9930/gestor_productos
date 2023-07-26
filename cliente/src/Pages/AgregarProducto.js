@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import Header from '../components/Header'
 import Swal from 'sweetalert2'
 import clienteAxios from '../components/axios/ClienteAxios'
+import { useNavigate } from 'react-router-dom'
 function AgregarProducto() {
-
+    const navigate = useNavigate();
     // HOOKS
     const [codigo, setCodigo] = useState('')
     const [nombre, setNombre] = useState('')
@@ -36,7 +37,7 @@ function AgregarProducto() {
                 clienteAxios.post('https://storsjo.onrender.com/api/producto/agregarproducto', producto)
                     .then(res => {
 
-                        window.location = '/listaProductos'
+                        navigate('/listaProductos')
 
                     })
                     .then(err => { console.log(err) })

@@ -1,11 +1,11 @@
 import React from 'react'
 import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 // import ClienteAxios from '../components/axios/ClienteAxios'
 
 function ProductoIndividual({ producto }) {
-
+    const navigate = useNavigate();
     function borrarProducto(codigo) {
         axios.post('https://storsjo.onrender.com/api/producto/borrarproducto', { codigo })
 
@@ -16,8 +16,7 @@ function ProductoIndividual({ producto }) {
             confirmButtonColor: '#F66A0D'
         })
             .then(response => {
-                window.location = '/listaProductos'
-
+                navigate('/listaProductos')
             })
 
 
@@ -48,7 +47,7 @@ function ProductoIndividual({ producto }) {
                 <div className='cont-edit'>
                     <Link to={`/editarproducto/${producto.codigo}`}><li className='btn-editar'>Editar</li></Link>
                 </div>
-                
+
 
             </div>
         </div>

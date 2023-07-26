@@ -5,8 +5,9 @@ import axios from 'axios'
 import Header from '../components/Header'
 import Swal from 'sweetalert2'
 import clienteAxios from '../components/axios/ClienteAxios'
+import { useNavigate } from 'react-router-dom'
 function EditarProducto() {
-
+    const navigate = useNavigate();
     const params = useParams()
 
     const [codigo, setCodigo] = useState('')
@@ -58,7 +59,7 @@ function EditarProducto() {
                         confirmButtonColor: '#F66A0D'
                     })
                         .then(response => {
-                            window.location = '/listaProductos'
+                            navigate('/listaProductos')
                         })
                 })
         } else {
