@@ -18,9 +18,10 @@ function ProductoIndividual({ producto }) {
         })
             .then(res => {
 
-                navigate('/listaProductos')
+                navigate('/listaProductos', {replace:true})
+                
             })
-            .then(err => { console.log(err) })
+     
     }
 
 
