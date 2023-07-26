@@ -69,14 +69,14 @@ router.post('/agregarproducto', upload.single('file'), (req, res) => {
     })
     nuevoproducto.save()
 
-    res.end('Producto Agregado')
+    res.send('Producto Agregado')
 })
 
 router.post('/borrarproducto', async (req, res) => {
     console.log(req.body)
     await ModeloProducto.findOneAndDelete({ codigo: req.body.codigo })
 
-    res.end('Producto Eliminado')
+    res.send('Producto Eliminado')
 })
 
 router.post('/editarproducto', async (req, res) => {
