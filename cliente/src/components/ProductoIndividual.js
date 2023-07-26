@@ -11,7 +11,7 @@ function ProductoIndividual({ producto }) {
 
         Swal.fire({
             title: 'Producto Eliminado',
-            icon: trash,
+            icon: 'trash',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#F66A0D'
         })
