@@ -10,13 +10,13 @@ function ProductoIndividual({ producto }) {
         axios.post('https://storsjo.onrender.com/api/producto/borrarproducto', { codigo })
 
         Swal.fire({
-            title: 'Producto',
-            text: 'Producto Eliminado',
+            title: 'Producto Eliminado',
+            icon: trash,
             confirmButtonText: 'Ok',
             confirmButtonColor: '#F66A0D'
         })
             .then(response => {
-                navigate('/listaProductos')
+                navigate('/listaproductos')
             })
 
 
