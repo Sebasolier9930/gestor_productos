@@ -33,7 +33,7 @@ function AgregarProducto() {
             confirmButtonColor: '#F66A0D'
         })
             .then(response => {
-                clienteAxios.post('http://localhost:5000/api/producto/agregarproducto', producto)
+                clienteAxios.post('https://storsjo.onrender.com/api/producto/agregarproducto', producto)
                     .then(res => {
 
                         window.location = '/listaProductos'

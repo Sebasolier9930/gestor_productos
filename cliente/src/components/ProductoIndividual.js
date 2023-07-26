@@ -7,7 +7,7 @@ import axios from 'axios'
 function ProductoIndividual({ producto }) {
 
     function borrarProducto(codigo) {
-        axios.post('http://localhost:5000/api/producto/borrarproducto', { codigo })
+        axios.post('https://storsjo.onrender.com/api/producto/borrarproducto', { codigo })
 
         Swal.fire({
             title: 'Producto',
@@ -32,7 +32,7 @@ function ProductoIndividual({ producto }) {
 
                 <p>{producto.codigo}</p>
 
-                <img src={producto.file ? "http://localhost:5000/" + producto.file : "http://localhost:5000/imagen_por_defecto.jpg"}></img>
+                <img src={producto.file ? "https://storsjo.onrender.com" + producto.file : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
 
             </div>
 

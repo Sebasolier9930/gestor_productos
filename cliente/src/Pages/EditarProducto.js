@@ -18,7 +18,7 @@ function EditarProducto() {
     const [file, setFileN] = useState('')
 
     useEffect(() => {
-        axios.post('http://localhost:5000/api/producto/editarproducto', { codigo: params.codigo })
+        axios.post('https://storsjo.onrender.com/api/producto/editarproducto', { codigo: params.codigo })
             .then(res => {
                 console.log(res.data[0])
 
@@ -48,7 +48,7 @@ function EditarProducto() {
             file: file
         }
         if (codigo !== '' && nombre !== '' && categoria !== '' && precio !== '' && descripcion !== '') {
-            clienteAxios.post('http://localhost:5000/api/producto/actualizarproducto', actualizarproducto)
+            clienteAxios.post('https://storsjo.onrender.com/api/producto/actualizarproducto', actualizarproducto)
                 .then(res => {
                     console.log(res.data)
                     Swal.fire({
@@ -88,7 +88,7 @@ function EditarProducto() {
                             <label className="form-label">Imagen</label>
                             <input type="file" className="form-control" onChange={(e) => { setFileN(e.target.files[0]) }} />
                         </div>
-                        <img src={imagen ? "http://localhost:5000/" + imagen : "http://localhost:5000/imagen_por_defecto.jpg"}></img>
+                        <img src={imagen ? "https://storsjo.onrender.com" + imagen : "https://storsjo.onrender.com/imagen_por_defecto.jpg"}></img>
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Nombre</label>

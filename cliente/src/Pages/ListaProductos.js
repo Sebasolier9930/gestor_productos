@@ -7,7 +7,7 @@ function ListaProductos(){
     const[dataProductos, setDataProductos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/producto/obtenerproductos')
+        axios.get('https://storsjo.onrender.com/api/producto/obtenerproductos')
         .then(res => {
            // console.log(res.data)
 

@@ -7,7 +7,7 @@ const path = require('path')
 const archivoBD = require('./conexion')
 
 app.use(cors({
-    origin: "http://localhost:3000"
+    origin: "https://storsjocartagena.onrender.com"
 }))
 
 
