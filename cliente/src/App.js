@@ -3,14 +3,14 @@ import Landing from './Pages/Landing';
 import ListaProductos from './Pages/ListaProductos';
 import EditarProducto from './Pages/EditarProducto';
 import AgregarProducto from './Pages/AgregarProducto';
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route} from 'react-router-dom';
+// import { Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
 
 
-    <BrowserRouter>
+    <Router>
 
       <Routes>
         <Route path='/' element={<Landing></Landing>}></Route>
@@ -18,7 +18,7 @@ function App() {
         <Route path='/agregarproducto' element={<AgregarProducto></AgregarProducto>}></Route>
         <Route path='/editarproducto/:codigo' element={<EditarProducto></EditarProducto>}></Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
 
 
   );
