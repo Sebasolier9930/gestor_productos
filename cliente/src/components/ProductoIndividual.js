@@ -12,16 +12,18 @@ function ProductoIndividual({ producto }) {
 
         Swal.fire({
             title: 'Producto Eliminado',
-            icon: 'succes',
+            icon: 'success',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#F66A0D'
         })
-            .then(response => {
+            .then(res => {
+
                 navigate('/listaProductos')
             })
-
-
+            .then(err => { console.log(err) })
     }
+
+
     console.log(producto)
     return (
         <div className='card'>
