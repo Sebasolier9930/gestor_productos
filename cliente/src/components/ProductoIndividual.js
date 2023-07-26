@@ -1,6 +1,7 @@
 import React from 'react'
 import Swal from 'sweetalert2'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 // import ClienteAxios from '../components/axios/ClienteAxios'
 
@@ -11,12 +12,12 @@ function ProductoIndividual({ producto }) {
 
         Swal.fire({
             title: 'Producto Eliminado',
-            icon: 'trash',
+            icon: 'succes',
             confirmButtonText: 'Ok',
             confirmButtonColor: '#F66A0D'
         })
             .then(response => {
-                navigate('/listaproductos')
+                navigate('/listaProductos')
             })
 
 
