@@ -18,7 +18,7 @@ function ProductoIndividual({ producto }) {
         })
             .then(res => {
 
-                navigate('/listaProductos', {replace:true})
+                window.location.reload()
                 
             })
      
