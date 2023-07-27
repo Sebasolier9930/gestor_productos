@@ -5,7 +5,7 @@ import clienteAxios from '../components/axios/ClienteAxios'
 import { useNavigate } from 'react-router-dom'
 function AgregarProducto() {
     const navigate = useNavigate();
-    // HOOKS
+    // HOOKS.
     const [codigo, setCodigo] = useState('')
     const [nombre, setNombre] = useState('')
     const [categoria, setCategoria] = useState('')
